@@ -9,5 +9,6 @@
   - Comunicarse con el fotógrafo mediante mensajes
 
 ### Tecnologías
--PHP
--Angular 12
+- PHP 7.4
+- MySQL
+- Angular 12
