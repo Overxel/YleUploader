@@ -8,3 +8,6 @@
   - Descargar sus sesiones de fotos en alta resolución
   - Comunicarse con el fotógrafo mediante mensajes
 
+### Tecnologías
+-PHP
+-Angular 12
