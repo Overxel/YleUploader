@@ -6,4 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  links = [
+    {
+      name: "Inicio",
+      url: ""
+    },
+    {
+      name: "Lista",
+      url: "list"
+    },
+    {
+      name: "Formulario",
+      url: "form"
+    }
+  ]
+  title = 'angular-material-example';
 }
