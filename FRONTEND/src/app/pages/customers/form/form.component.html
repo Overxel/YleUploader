@@ -1,3 +1,25 @@
-<p>
-  form works!
-</p>
+<h2 mat-dialog-title *ngIf="id == undefined; else elseBlock">Nuevo Cliente</h2>
+<ng-template #elseBlock>
+  <h2 mat-dialog-title>Editar Cliente</h2>
+</ng-template>
+
+<mat-dialog-content class="mat-typography">
+<div>
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="miemail@gmail.com" [formControl]="email" required>
+    <mat-error *ngIf="email.invalid">{{getMailError()}}</mat-error>
+  </mat-form-field>
+</div>
+<div>
+  <mat-form-field appearance="fill">
+    <mat-label>Teléfono</mat-label>
+    <input matInput placeholder="648267231" [formControl]="phone" maxlength="9" minlength="9" required>
+    <mat-error *ngIf="phone.invalid">{{getPhoneError()}}</mat-error>
+  </mat-form-field>
+</div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Aceptar</button>
+</mat-dialog-actions>
