@@ -34,22 +34,7 @@ const routes: Routes = [
       import('./pages/campaigns/campaigns.module').then(
         (m) => m.CampaignsModule
       ),
-  },
-  {
-    path: 'campaigns-crud',
-    loadChildren: () =>
-      import('./pages/campaigns/crud/crud.module').then((m) => m.CrudModule),
-  },
-  {
-    path: 'photoshoots-crud',
-    loadChildren: () =>
-      import('./pages/photoshoots/crud/crud.module').then((m) => m.CrudModule),
-  },
-  {
-    path: 'customers-crud',
-    loadChildren: () =>
-      import('./pages/customers/crud/crud.module').then((m) => m.CrudModule),
-  },
+  }
 ];
 
 @NgModule({
