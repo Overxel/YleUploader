@@ -17,8 +17,9 @@ export class CustomersComponent implements OnInit {
      this.service.getCustomers().subscribe(data => this.dataSource = data)
   }
 
-  edit() {
+  edit(id :number) {
     const dialogRef = this.dialog.open(FormComponent);
+    dialogRef.componentInstance.id = id;
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });

@@ -4,6 +4,20 @@
 </ng-template>
 
 <mat-dialog-content class="mat-typography">
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre</mat-label>
+      <input matInput placeholder="Ej. Maria" [formControl]="name"  required>
+      <mat-error *ngIf="name.invalid">{{getNameError()}}</mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Apellidos</mat-label>
+      <input matInput placeholder="Ej. González Saavedra" [formControl]="surname" required>
+      <mat-error *ngIf="surname.invalid">{{getSurNameError()}}</mat-error>
+    </mat-form-field>
+  </div>
 <div>
   <mat-form-field appearance="fill">
     <mat-label>Email</mat-label>
@@ -21,5 +35,5 @@
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Cancelar</button>
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Aceptar</button>
+  <button mat-button [mat-dialog-close]="true"  cdkFocusInitial>Aceptar</button>
 </mat-dialog-actions>

@@ -1,3 +1,4 @@
+import { CustomersService } from './../../../services/customers.service';
 import { Component, Input, OnInit } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 
@@ -9,19 +10,27 @@ import {FormControl, Validators} from '@angular/forms';
 export class FormComponent implements OnInit {
   @Input() id: any = undefined;
 
+  name = new FormControl('', [Validators.required]);
+  surname = new FormControl('', [Validators.required]);
   email = new FormControl('', [Validators.required, Validators.email]);
-  phone = new FormControl('', 
+  phone = new FormControl('',
    [Validators.required,
     Validators.pattern("^[0-9]*$"),
     Validators.minLength(9),
     Validators.maxLength(9),
   ]);
-  
-  constructor() { }
+
+
+  constructor(public service: CustomersService) { }
 
   ngOnInit() {
     if(this.id){
-      this.email.setValue('antoniorodriguezvega@gmail.com');
+      this.service.getCustomer(this.id).subscribe(customer => {
+        this.name.setValue(customer.name);
+        this.surname.setValue(customer.surname);
+        this.email.setValue(customer.email);
+        this.phone.setValue(customer.phone);
+      });
     }
   }
 
@@ -43,6 +52,20 @@ export class FormComponent implements OnInit {
 
     if(this.phone.hasError('minlenght') || this.phone.hasError('maxlenght')){
       return 'La longitud del teléfono introducida no es correcta';
+    }
+    return '';
+  }
+
+  getNameError(){
+    if (this.name.hasError('required')) {
+      return 'Campo obligatorio';
+    }
+    return '';
+  }
+
+  getSurNameError(){
+    if (this.name.hasError('required')) {
+      return 'Campo obligatorio';
     }
     return '';
   }
