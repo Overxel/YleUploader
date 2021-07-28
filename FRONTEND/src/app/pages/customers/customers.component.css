@@ -1,0 +1,19 @@
+table {
+  width: 100%;;
+}
+
+.mat-icon {
+  vertical-align: bottom;
+}
+
+.person_add {
+  color: #28a745;
+}
+
+.person_add:hover {
+  cursor:pointer;
+}
+
+.headerStyle {
+
+}

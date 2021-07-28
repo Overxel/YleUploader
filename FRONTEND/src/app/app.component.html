@@ -1,4 +1,29 @@
-<app-navbar></app-navbar>
-<div class="container">
-  <router-outlet></router-outlet>
+<div class="appContainer" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar color="primary" class="toolbar">
+    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="sidenav-container"
+                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56"
+                 [opened]="opened"
+                 class="sidenav"
+                 >
+      <mat-nav-list>
+        <a *ngFor="let navLink of navLinks"
+            [routerLink]="navLink.URL"
+            [routerLinkActive]="['active-link']"
+            class="nav-link"
+          >
+          <mat-icon>{{navLink.Icon}}</mat-icon>
+            &nbsp;&nbsp;&nbsp; {{ navLink.DisplayName }}
+          </a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+     <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>

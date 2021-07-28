@@ -1,6 +1,5 @@
 <?php
 require "../Config/Config.php";
-require "../Utilities/db.php";
 require "../vendor/autoload.php";
 
 use \Firebase\JWT\JWT;

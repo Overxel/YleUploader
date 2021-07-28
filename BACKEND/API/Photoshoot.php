@@ -6,6 +6,6 @@ if(IsAuth()){
 $tableName = "photoshoot";
 $postSqlSentence = "INSERT INTO photoshoot (id, description, place, type, customerid, updated, created) 
                     VALUES (:id, :description, :place, :type, :customerid, :updated, :created);";
-db::ProcessRequest($db, $tableName, $postSqlSentence);
+Database::ProcessRequest($db, $tableName, $postSqlSentence);
 }
 ?>

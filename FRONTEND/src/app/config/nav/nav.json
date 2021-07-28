@@ -1,19 +1,19 @@
 {
   "NavLinks": [
     {
-      "URL": "/",
+      "URL": "/customers",
       "DisplayName": "Clientes",
-      "Icon": "fas fa-users"
+      "Icon": "people"
     },
     {
-      "URL": "/",
+      "URL": "/photoshoots",
       "DisplayName": "Sesiones",
-      "Icon": "fas fa-camera-retro"
+      "Icon": "collections"
     },
     {
-      "URL": "/",
+      "URL": "/campaigns",
       "DisplayName": "Campañas",
-      "Icon": "fas fa-calendar-week"
+      "Icon": "calendar_today"
     }
   ]
 }
